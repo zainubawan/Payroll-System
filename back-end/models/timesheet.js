@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-// require('./init')
+require('./db_config')
 
 const timesheetSchema = mongoose.Schema({
   hours_worked: {
