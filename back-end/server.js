@@ -1,5 +1,6 @@
 const express = require('express')
 const server = express()
+const bodyParser = require('body-parser')
 
 // Model imports
 const Timesheet = require('./models/timesheet')
@@ -10,6 +11,7 @@ const timesheetRouter = require('./routes/timesheet_routes')
 const employeeRouter = require('./routes/employee_routes')
 
 // Middleware
+server.use(bodyParser.json());
 server.use(timesheetRouter);
 server.use(employeeRouter);
 

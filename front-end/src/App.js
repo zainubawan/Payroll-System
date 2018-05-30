@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TimesheetList from './components/Timesheet-list';
+import TimesheetList from './components/timesheet-list';
 
 class App extends Component {
 
@@ -9,13 +9,14 @@ class App extends Component {
   }
 
   render() {
-    const timesheets = this.state.timesheets;
-
+    const { timesheets } = this.state;
     return (
       <div className="App">
         {
-          timesheets ? (
-            <TimesheetList items="{timesheets}" />
+          !!timesheets ? (
+            <TimesheetList
+              items={ timesheets }
+            />
           ) : (
             "loading"
           )
@@ -26,11 +27,14 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/test')
-      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        return res.json();
+      })
       .then(json => {
-        console.log([json])
+        console.log(json)
         this.setState({
-          timesheets: [json]
+          timesheets: json
         })
       })
   }
