@@ -6,37 +6,6 @@ const router = express.Router()
  * Timesheets routes
  */
 
-const testData = [
-  {
-    date: "12-10-2015",
-    hoursWorked: "8",
-    employeeID: "5",
-    status: "approved",
-  },
-  {
-    date: "12-10-2015",
-    hoursWorked: "8",
-    employeeID: "5",
-    status: "pending",
-  },
-  {
-    date: "12-10-2015",
-    hoursWorked: "8",
-    employeeID: "5",
-    status: "unsubmitted",
-  },
-  {
-    date: "12-10-2015",
-    hoursWorked: "8",
-    employeeID: "5",
-    status: "approved",
-  }
-];
-
-router.get('/test', (req, res) => {
-  res.json(testData);
-})
-
 router.get('/timesheets', (req, res) => {
   Timesheet.find()
     .then(timesheets => {

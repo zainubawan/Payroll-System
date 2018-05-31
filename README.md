@@ -13,3 +13,13 @@ Run mongodb server:
 
 In another cmd:
   $ mongo
+
+
+To seed data into database:
+
+run mongodb server
+
+then run seed command
+$ node path_to_seed_file/collection_name.js
+
+

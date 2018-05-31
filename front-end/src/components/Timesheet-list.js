@@ -6,26 +6,26 @@ export default function TimesheetList({
   items
 }) {
 
-  function myFunc (e) {
-    e.preventDefault();
-    console.log('mlem')
-  }
+  // function myFunc (e) {
+  //   e.preventDefault();
+  //   console.log('mlem')
+  // }
   
   return (
-    <div className="timesheet-container">
+    <div className="">
     {
       items.map((item, index) => (
         <TimesheetItem
           key = {index}
-          date = {item.date}
-          day = {item.day}
-          hoursWorked = {item.hoursWorked}
-          employeeID = {item.employeeID}
+          name = {item.name}
+          hours_worked = {item.hours_worked}
+          date_worked = {item.date_worked}
+          location = {item.location}
+          _id = {item._id}
           status = {item.status}
         />
       ))
     }
-      <button type="submit" class="btn btn-primary">Sign in</button>
     </div>
   )
 }

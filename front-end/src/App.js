@@ -4,6 +4,7 @@ import TimesheetList from './components/timesheet-list';
 
 class App extends Component {
 
+  // The object that contains data from the server 
   state = {
     timesheets: null
   }
@@ -15,18 +16,18 @@ class App extends Component {
         {
           !!timesheets ? (
             <TimesheetList
-              items={ timesheets }
+              items={timesheets}
             />
           ) : (
-            "loading"
-          )
+              "loading"
+            )
         }
       </div>
     );
   }
 
   componentDidMount() {
-    fetch('/test')
+    fetch('/timesheets')
       .then(res => {
         console.log(res)
         return res.json();
